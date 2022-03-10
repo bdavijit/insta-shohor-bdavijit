@@ -59,16 +59,16 @@ const switchTab = (id) => {
   }
 };
 
-const createPost = (post) => {
-  let state = true;
+const createPost = (post, Isreported = false) => {
+  let reportedstate = true;
 
   for (const reportedPost of reportedPostsId) {
     if (post.id === reportedPost) {
-      state = false;
+      reportedstate = false;
     }
   }
 
-  if (state) {
+  if (reportedstate || Isreported) {
     const image = post.image;
     const div = document.createElement("article");
     div.classList.add("post");
@@ -183,9 +183,12 @@ const displayLikedPosts = () => {
 
 const displayReportedPosts = () => {
   const reportedPosts = getReportedPosts();
-  posts.forEach((post) => {
-    const div = createPost(post);
-    document.getElementById("reported").appendChild(div);
+  document.getElementById("reported").innerHTML = "";
+  reportedPosts.forEach((post) => {
+    const div = createPost(post, true);
+    if (div) {
+      document.getElementById("reported").appendChild(div);
+    }
   });
 };
 
