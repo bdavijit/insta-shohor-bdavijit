@@ -16,11 +16,7 @@ const isLiked = (id) => {
 };
 
 const addToLiked = (id) => {
-  console.log(reportedPostsId);
-
   likedPostsId.push(id);
-
-  console.log(likedPostsId);
 
   showPosts(posts);
 };
@@ -68,6 +64,7 @@ const createPost = (post, Isreported = false) => {
     }
   }
 
+  //Switch to love or reported list
   if (reportedstate || Isreported) {
     const image = post.image;
     const div = document.createElement("article");
@@ -153,7 +150,7 @@ const createPost = (post, Isreported = false) => {
       `;
     return div;
   } else {
-    return 0;
+    return 0; //0 = falsey value , It can falsify the condition
   }
 };
 
@@ -163,6 +160,7 @@ const showPosts = (posts) => {
 
   posts.forEach((post) => {
     const div = createPost(post);
+    //Ignores false returns
     if (div) {
       productsContainer.appendChild(div);
     }
@@ -171,10 +169,11 @@ const showPosts = (posts) => {
 
 const displayLikedPosts = () => {
   const likedPosts = getLikedPosts();
-  // console.log(likedPosts);
+
   document.getElementById("likedbox").innerHTML = "";
   likedPosts.forEach((post) => {
     const div = createPost(post);
+    //Ignores false returns
     if (div) {
       document.getElementById("likedbox").appendChild(div);
     }
@@ -186,6 +185,7 @@ const displayReportedPosts = () => {
   document.getElementById("reportedBox").innerHTML = "";
   reportedPosts.forEach((post) => {
     const div = createPost(post, true);
+    //Ignores false returns
     if (div) {
       document.getElementById("reportedBox").appendChild(div);
     }
