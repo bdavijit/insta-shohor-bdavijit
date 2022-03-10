@@ -59,7 +59,6 @@ const switchTab = (id) => {
   }
 };
 
-
 const createPost = (post) => {
   let state = true;
 
@@ -153,6 +152,8 @@ const createPost = (post) => {
               </div>
       `;
     return div;
+  } else {
+    return 0;
   }
 };
 
@@ -162,15 +163,21 @@ const showPosts = (posts) => {
 
   posts.forEach((post) => {
     const div = createPost(post);
-    productsContainer.appendChild(div);
+    if (div) {
+      productsContainer.appendChild(div);
+    }
   });
 };
 
 const displayLikedPosts = () => {
   const likedPosts = getLikedPosts();
+  // console.log(likedPosts);
+  document.getElementById("liked").innerHTML = "";
   likedPosts.forEach((post) => {
     const div = createPost(post);
-    document.getElementById("liked").appendChild(div);
+    if (div) {
+      document.getElementById("liked").appendChild(div);
+    }
   });
 };
 
