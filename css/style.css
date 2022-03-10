@@ -52,6 +52,8 @@ img {
   margin: auto;
   align-items: center;
   justify-content: center;
+
+  
 }
 
 /* Post */
@@ -63,6 +65,16 @@ img {
   border: 1px solid var(--border);
   text-align: left;
 
+  height: 712px;
+
+}
+@media only screen and (max-width: 1212px) {
+
+  .post {
+ 
+    height: 730px;
+  
+  }
 }
 
 .post__header {
