@@ -172,22 +172,22 @@ const showPosts = (posts) => {
 const displayLikedPosts = () => {
   const likedPosts = getLikedPosts();
   // console.log(likedPosts);
-  document.getElementById("liked").innerHTML = "";
+  document.getElementById("likedbox").innerHTML = "";
   likedPosts.forEach((post) => {
     const div = createPost(post);
     if (div) {
-      document.getElementById("liked").appendChild(div);
+      document.getElementById("likedbox").appendChild(div);
     }
   });
 };
 
 const displayReportedPosts = () => {
   const reportedPosts = getReportedPosts();
-  document.getElementById("reported").innerHTML = "";
+  document.getElementById("reportedBox").innerHTML = "";
   reportedPosts.forEach((post) => {
     const div = createPost(post, true);
     if (div) {
-      document.getElementById("reported").appendChild(div);
+      document.getElementById("reportedBox").appendChild(div);
     }
   });
 };
