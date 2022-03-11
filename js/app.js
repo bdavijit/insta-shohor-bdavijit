@@ -73,9 +73,9 @@ const deselect = (id) => {
 };
 
 const createPost = (post, Isreported = false) => {
-  let reportedstate = true;
-
   
+  //Ignore deleted files
+  let reportedstate = true;
   for (const reportedPost of reportedPostsId) {
     if (post.id === reportedPost) {
       reportedstate = false;
@@ -220,4 +220,21 @@ const loadPosts = async () => {
   showPosts(posts);
 };
 
+// const Home = () =>{
+//   switchTab( 'posts' );
+//   location.reload(); 
+// }
+// const Love = () =>{
+//   switchTab( 'liked' )
+//   location.reload(); 
+// }
+
 loadPosts();
+// const navLinks = document.querySelectorAll('.nav-item')
+// const menuToggle = document.getElementById('navbarSupportedContent')
+// const bsCollapse = new bootstrap.Collapse(menuToggle, {toggle:false})
+// navLinks.forEach((l) => {
+//     l.addEventListener('click', () => { bsCollapse.toggle() })
+// })
+
+
