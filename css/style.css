@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 
 /* CSS Reset */
 *,
@@ -14,7 +14,7 @@ button,
 input,
 select,
 textarea {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 /* Vars */
@@ -44,7 +44,7 @@ img {
   max-width: 100%;
 }
 
-#posts{
+#posts {
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(3, 1fr);
@@ -52,8 +52,6 @@ img {
   margin: auto;
   align-items: center;
   justify-content: center;
-
-  
 }
 
 /* Post */
@@ -66,14 +64,10 @@ img {
   text-align: left;
 
   height: 712px;
-
 }
 @media only screen and (max-width: 1212px) {
-
   .post {
- 
     height: 730px;
-  
   }
 }
 
@@ -98,7 +92,7 @@ img {
   position: relative;
 }
 .post__avatar::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;
@@ -212,7 +206,7 @@ img {
   position: relative;
 }
 .post__likes-avatar::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;
@@ -245,19 +239,19 @@ img {
   text-transform: uppercase;
   text-align: right;
 }
-.post__content{
+.post__content {
   margin: 10px 0;
   color: gray;
 }
 
-#liked{
+#liked {
   display: none;
 }
-#reported{
+#reported {
   display: none;
 }
 
-.articleSize{
+.articleSize {
   max-width: 60%;
 }
 
@@ -265,18 +259,18 @@ img {
   #posts {
     grid-template-columns: repeat(2, 1fr);
   }
-  .articleSize{
+  .articleSize {
     max-width: 80%;
   }
-  
-
 }
 @media only screen and (max-width: 576px) {
   #posts {
     grid-template-columns: repeat(1, 1fr);
   }
-  .articleSize{
+  .articleSize {
     max-width: 90%;
   }
-  
+  .post {
+    height: 750px;
+  }
 }
