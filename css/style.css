@@ -257,14 +257,26 @@ img {
   display: none;
 }
 
+.articleSize{
+  max-width: 60%;
+}
+
 @media only screen and (max-width: 992px) {
   #posts {
     grid-template-columns: repeat(2, 1fr);
   }
+  .articleSize{
+    max-width: 80%;
+  }
+  
 
 }
 @media only screen and (max-width: 576px) {
   #posts {
     grid-template-columns: repeat(1, 1fr);
   }
+  .articleSize{
+    max-width: 90%;
+  }
+  
 }
