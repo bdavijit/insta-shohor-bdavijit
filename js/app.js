@@ -1,6 +1,6 @@
 let posts = [];
 
-const likedPostsId = [];
+let likedPostsId = [];
 const reportedPostsId = [];
 
 const getLikedPosts = () => {
@@ -16,8 +16,15 @@ const isLiked = (id) => {
 };
 
 const addToLiked = (id) => {
+//second click means deselect
+ if(!likedPostsId.find(likedPost => likedPost === id )){
   likedPostsId.push(id);
-
+ }else{
+   //deselect love react
+  deselect(id);
+ }
+  
+  console.log(likedPostsId);
   showPosts(posts);
 };
 
@@ -57,15 +64,27 @@ const switchTab = (id) => {
     displayReportedPosts();
   }
 };
+//deselect love react
+const deselect = (id) => {
+  
+    const newlikedPostsIds = likedPostsId.filter(likedPost => likedPost !== id );
+    likedPostsId = newlikedPostsIds;
+   
+};
 
 const createPost = (post, Isreported = false) => {
   let reportedstate = true;
 
+  
   for (const reportedPost of reportedPostsId) {
     if (post.id === reportedPost) {
       reportedstate = false;
+      //deselect love react
+      deselect(post.id);
+
     }
   }
+
 
   //Switch to love or reported list
   if (reportedstate || Isreported) {
